@@ -1,11 +1,11 @@
 {
   "seo": {
     "description_default": "We help girls in rural Morocco get the education they deserve. With every purchase, we provide them with 3 days of education and housing.",
-    "title_gabi": "Gabi the Goat - Premium Squeaky Goat Toy | YouGoatMe 🐐",
+    "title_gabi": "Gabi the Goat - Premium Squeaky Goat Toy 🐐",
     "description_gabi": "Gabi the Goat helps girls in rural Morocco get the education they deserve. With every purchase, we provide them with 3 days of education and housing.",
-    "title_collections": "Our Products | YouGoatMe 🐐",
-    "title_homepage": "YouGoatMe | Gabi the Goat Needs Your Help",
-    "title_suffix": " | YouGoatMe 🐐"
+    "title_collections": "Our Products | Gabi the Goat 🐐",
+    "title_homepage": "Gabi the Goat: The squeaky goat toy with social impact",
+    "title_suffix": " | Gabi the Goat 🐐"
   },
   "404_page": {
     "title": "Page not found",
@@ -45,12 +45,12 @@
     },
     "impact": {
       "title": "Grab a Goat and Give Back",
-      "subtext": "Every purchase of a Gabi toy from YouGoatMe provides 3 days of education and housing for a girl in Morocco",
+      "subtext": "Every purchase of a Gabi toy provides 3 days of education and housing for a girl in Morocco",
       "cta": "Shop now"
     }
   },
   "list_collections": {
-    "title_html": "<em>Welcome to the</em><h1 class=\"with-preheader\">YouGoatMe Store</h1>",
+    "title_html": "<em>Welcome to the</em><h1 class=\"with-preheader\">Gabi the Goat Store</h1>",
     "description": "With each item purchased you provide 3 days of education and housing to a girl in Morocco",
     "learn_more_girls": "Learn more about the girls",
     "quality": "All our high-quality products are made with eco-friendly materials in an ethical factory"
@@ -79,7 +79,7 @@
       "image_caption": "Rural Moroccan girls",
       "text_1_html": "<p>We believe everyone on this Earth has the right to a decent education...</p><p>Yet very few girls from the rural communities of the High Atlas Mountains in Morocco get the opportunity to continue their education beyond primary school.</p>",
       "text_2_html": "<p>Secondary schools, mostly several kilometres away in larger towns, are not accessible to these girls because:<ul class=\"dashed\"><li>Their parents cannot afford to pay for transport or lodgings</li><li>The journey to the secondary schools can be dangerous</li><li>Their parents do not feel safe sending their daughters away from home to the existing facilities</li></ul></p>",
-      "text_3_html": "<p>This means that in these rural areas up to 83% of women are illiterate. So instead of these girls following their dreams of a better future they end up with a life spent at home. A life of domestic chores, early marriage and having children.</p><p>YouGoatMe was founded to help give these girls the education they deserve.</p>"
+      "text_3_html": "<p>This means that in these rural areas up to 83% of women are illiterate. So instead of these girls following their dreams of a better future they end up with a life spent at home. A life of domestic chores, early marriage and having children.</p><p>Gabi the Goat was founded to help give these girls the education they deserve.</p>"
     },
     "empowerement": {
       "title": "Empowered Girls = Empowered Women",
@@ -105,14 +105,14 @@
       "image_caption": "A goat on a tree",
       "text_1_html": "<p>I wanted to raise money to help these girls and at the same time do something fun to make more people aware of their situation.</p><p>I thought about my life as a child... in the Argan Oil forests of Morocco near to where I grew up live some strange goats who like to climb trees.</p>",
       "text_2_html": "<p>I loved goats and still do… their long silly tongues, weird rectangular eyes and crazy screams are super funny.</p><p>So I set out to create a squawking rubber toy that represents this legendary animal. One that I could sell to raise money and help these girls get a better education...</p>",
-      "text_3_html": "<p>That’s when YouGoatMe and Gabi the Goat was born.</p>"
+      "text_3_html": "<p>That’s when Gabi the Goat was born.</p>"
     },
     "efa": {
       "title": "Education For All",
-      "image_caption": "Gabi the Goat with the girl and YouGoatMe's founder",
+      "image_caption": "Gabi the Goat with the girl and Gabi the Goat's founder",
       "text_1_html": "<p>I had a way to raise money with Gabi the Goat so now all I needed was a way to use the money to help the girls get the education they deserve.</p><p>This is where Education For All (EFA) Morocco comes in. <a href=\"https://www.efamorocco.org/\" target=\"_blank\">EFA Morocco</a> is a non-profit that builds and runs boarding houses for girls who want to continue their education.</p>",
-      "text_2_html": "<p>The boarding houses allow the girls to live closer to school and everything is provided to them for free so money is no longer an issue.</p><p>With YouGoatMe I’m now on a mission:<br><i>To use the power of goats to provide girls in rural Morocco with a better education</i></p>",
-      "text_3_html": "Goat forth and spread the word!<br><i>- Simo Elalj, Founder</i><br>#GabiTheGoat #EducationForAll #YouGoatMe<br>",
+      "text_2_html": "<p>The boarding houses allow the girls to live closer to school and everything is provided to them for free so money is no longer an issue.</p><p>With Gabi, I’m now on a mission:<br><i>To use the power of goats to provide girls in rural Morocco with a better education</i></p>",
+      "text_3_html": "Goat forth and spread the word!<br><i>- Simo Elalj, Founder</i><br>#GabiTheGoat #EducationForAll<br>",
       "cta": "Meet Gabi the Goat"
     }
   },
@@ -128,7 +128,7 @@
     "contact_us": "Let us know",
     "social_product_description": {
       "title": "Social Impact",
-      "text_html": "<p>Well most girls in rural Morocco have to stop school at age 12 and miss out on much needed education.</p><p>We want this to change, so we partnered with Education For All Morocco who help these girls to get the education they deserve.</p><p>Each purchase of a merchandise on YouGoatMe gives a girl in Morocco 3 days of education and housing.</p>"
+      "text_html": "<p>Well most girls in rural Morocco have to stop school at age 12 and miss out on much needed education.</p><p>We want this to change, so we partnered with Education For All Morocco who help these girls to get the education they deserve.</p><p>Each purchase of a merchandise on GabiTheGoat gives a girl in Morocco 3 days of education and housing.</p>"
     },
     "donate_directly_html": "You may also <a href=\"/pages/donate\">donate directly to Education For All</a>.",
     "share": "Spread the goat love on:",

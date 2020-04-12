@@ -16,7 +16,6 @@
 
   // Retrieve the configuration for the store.
   const config = await store.getConfig();
-  console.log(config);
 
   // Create references to the main form and its submit button.
   const form = document.getElementById('payment-form');

@@ -2,6 +2,7 @@
   "name": "gabithegoat",
   "description": "Migrated Shopify theme to a NodeJS(express) with liquid templating and Stripe",
   "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "start": "node src/index.js",
     "dev": "node src/index.js & npm run webhook",

@@ -1,14 +1,14 @@
 {
-    "name": "YouGoatMe",
-    "short_name": "YouGoatMe",
+    "name": "GabiTheGoat",
+    "short_name": "GabiTheGoat",
     "icons": [
         {
-            "src": "https://cdn.shopify.com/s/files/1/3099/1240/t/2/assets/android-chrome-192x192.png",
+            "src": "/assets/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "https://cdn.shopify.com/s/files/1/3099/1240/t/2/assets/android-chrome-256x256.png",
+            "src": "/assets/android-chrome-256x256.png",
             "sizes": "256x256",
             "type": "image/png"
         }
