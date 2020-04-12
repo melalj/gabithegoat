@@ -1,0 +1,46 @@
+{% layout "layout" %}
+<div class="container container-md" data-sticky-trigger="top">
+  <div align="center" class="page-subheader">
+    <h1 class="with-preheader">{{ 'story.title' | t }}</h1>
+  </div>
+
+  <h2>{{ 'story.importance.title' | t }}</h2>
+  <div class="side-by-side align-top responsive responsive-switch">
+    <div class="left-side">
+      {{ 'story.importance.text_1_html' | t }}
+      {{ 'story.importance.text_2_html' | t }}
+      {{ 'story.importance.text_3_html' | t }}
+    </div>
+    <div class="right-side">
+      <img async src="{{ 'story-1-c.png' | asset_url }}" width="278px" height="331px" alt="Rural moroccan girls" />
+    </div>
+  </div>
+
+  <h2>{{ 'story.crazy_idea.title' | t }}</h2>
+  <div class="side-by-side align-top responsive responsive-scale-img">
+    <div class="left-side">
+      <img async src="{{ 'story-2-c.png' | asset_url }}" width="339px" height="339px" alt="{{ 'story.crazy_idea.image_caption' | t }}"/>
+    </div>
+    <div class="right-side">
+      {{ 'story.crazy_idea.text_1_html' | t }}
+      {{ 'story.crazy_idea.text_2_html' | t }}
+      {{ 'story.crazy_idea.text_3_html' | t }}
+    </div>
+  </div>
+
+  <h2>{{ 'story.efa.title' | t }}</h2>
+  <div class="side-by-side align-top responsive responsive-scale-img responsive-switch">
+    <div class="left-side">
+      {{ 'story.efa.text_1_html' | t }}
+      {{ 'story.efa.text_2_html' | t }}
+      <p>
+        {{ 'story.efa.text_3_html' | t }}
+        <a href="/products/gabi-the-goat-squeaky-toy" class="btn btn-sm">{{ 'story.efa.cta' | t }}</a>
+      </p>
+
+    </div>
+    <div class="right-side">
+      <img async src="{{ 'story-3-c.png' | asset_url }}" width="361px" height="361px" alt="{{ 'story.efa.image_caption' | t }}" />
+    </div>
+  </div>
+</div>

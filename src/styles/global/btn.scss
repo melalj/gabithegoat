@@ -1,0 +1,120 @@
+
+.btn {
+  display: inline-block;
+  background: rgb(255, 100, 162);
+  box-shadow: 0 3px 0 0 #c34a7a;
+  border-radius: 100px;
+  font-size: 28px;
+  font-family: "Museo", "Helvetica", "san-serif";  
+  color: #ffffff;
+  padding: 20px 50px 21px;
+  margin: 20px 10px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  transform: translateY(0);
+  user-select: none;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    font-size: 24px;
+    margin: 10px;
+  }
+}
+
+.btn:hover, .btn:focus {
+  background: rgb(255, 118, 173);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 0 0 #c34a7a;
+}
+
+.btn:active {
+  background: rgb(212, 65, 124);
+  transform: translateY(1px);
+  box-shadow: 0 2px 0 0 #c34a7a;
+}
+
+.btn-secondary {
+  background: #4ad5fd;
+  box-shadow: 0 3px 0 0 #52c7e7;  
+}
+.btn-secondary:hover, .btn-secondary:focus {
+  background: #6ddfff;
+  box-shadow: 0 4px 0 0 #52c7e7;
+}
+
+.btn-secondary:active {
+  background: #52c7e7;
+  transform: translateY(1px);
+  box-shadow: 0 2px 0 0 #52c7e7;
+}
+
+.btn-white {
+  background: #4ad5fd;
+  border: 2px solid #fff;
+  box-shadow: none;
+}
+.btn-white:hover, .btn-white:focus {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-white:active {
+  background: #52c7e7;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn[disabled] {
+  background: #dedede;
+  box-shadow: 0 3px 0 0 #bfbfbf;
+  cursor: normal;  
+}
+
+.btn[disabled]:hover, .btn[disabled]:focus {
+  background: #dedede;
+  transform: translateY(0);
+  cursor: normal;  
+  box-shadow: 0 4px 0 0 #bfbfbf;  
+}
+
+.btn[disabled]:active {
+  background: #dedede;
+  transform: translateY(0);
+  cursor: normal;  
+  box-shadow: 0 4px 0 0 #bfbfbf;  
+}
+
+.btn.btn-sm {
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.btn.btn-full {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.btn-black {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff !important;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 64px;
+  text-decoration: none;
+  transition: 300ms ease-in background-color;
+  transition: 300ms ease-in transform;
+}
+
+.btn-black:hover {
+  background: rgba(0, 0, 0, 0.8);
+}

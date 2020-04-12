@@ -1,0 +1,36 @@
+.about-social a {
+  color: #a2b4be;
+}
+
+.about-social a:hover {
+  text-decoration: none;
+}
+
+h3 em {
+  font-weight: normal;
+  color: #a2b4be;
+}
+
+.collage-story {
+  position: relative;
+  width: 460px;
+  height: 550px;
+  .story-chicken {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    z-index: 1;
+  }
+  .story-goat {
+    position: absolute;
+    top: 17px;
+    left: 156px;
+    z-index: 2;
+  }
+  .story-group {
+    position: absolute;
+    top: 190px;
+    left: 25px;
+    z-index: 3;
+  }
+}

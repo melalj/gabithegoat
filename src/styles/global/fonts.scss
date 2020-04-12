@@ -1,0 +1,215 @@
+/**
+@font-face {
+  font-family: "Museo";
+  src: url("/assets/museo900.woff");
+  font-weight: bold;
+  font-style: normal;
+}
+**/
+
+@font-face {
+  font-family: "Museo";
+  src: url("/assets/museo700.woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Museo";
+  src: url("/assets/museo300.woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "yougoatme";
+  src: url("/assets/yougoatme.woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-icon]:before {
+  font-family: "yougoatme" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "yougoatme" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-caret-small-down {
+  position: relative;
+  top: 3px;
+}
+
+.icon-arrow-right {
+  position: relative;
+  top: 3px;
+}
+
+.icon-plus-circle {
+  top: 4px;
+  position: relative;
+}
+
+.icon-facebook:before {
+  content: "\62";
+}
+.icon-arrow-down:before {
+  content: "\61";
+}
+.icon-arrow-right:before {
+  content: "\63";
+}
+.icon-triangle-down:before {
+  content: "\64";
+}
+.icon-cart:before {
+  content: "\65";
+}
+.icon-cross:before {
+  content: "\66";
+}
+.icon-facebook-1:before {
+  content: "\67";
+}
+.icon-goat:before {
+  content: "\68";
+}
+.icon-goat-logo:before {
+  content: "\69";
+}
+.icon-instagram:before {
+  content: "\6a";
+}
+.icon-menu:before {
+  content: "\6b";
+}
+.icon-separator:before {
+  content: "\6c";
+}
+.icon-twitter:before {
+  content: "\6d";
+}
+.icon-producthunt:before {
+  content: "\6e";
+}
+.icon-whatsapp:before {
+  content: "\6f";
+}
+.icon-messenger:before {
+  content: "\70";
+}
+.icon-pinterest:before {
+  content: "\71";
+}
+.icon-cart-full:before {
+  content: "\72";
+}
+.icon-cart-empty:before {
+  content: "\73";
+}
+.icon-bag:before {
+  content: "\74";
+}
+.icon-emoji-love:before {
+  content: "\75";
+}
+.icon-emoji-happy:before {
+  content: "\76";
+}
+.icon-pinterest-round:before {
+  content: "\77";
+}
+.icon-facebook-round:before {
+  content: "\78";
+}
+.icon-twitter-round:before {
+  content: "\79";
+}
+.icon-caret-small-right:before {
+  content: "\7a";
+}
+.icon-caret-small-down:before {
+  content: "\41";
+}
+.icon-caret-large-right:before {
+  content: "\42";
+}
+.icon-caret-large-left:before {
+  content: "\43";
+}
+.icon-check-light:before {
+  content: "\44";
+}
+.icon-cross-light:before {
+  content: "\45";
+}
+.icon-tshirt:before {
+  content: "\57";
+}
+.icon-tshirt2:before {
+  content: "\46";
+}
+.icon-discount:before {
+  content: "\48";
+}
+.icon-heart:before {
+  content: "\49";
+}
+.icon-export:before {
+  content: "\4a";
+}
+.icon-share:before {
+  content: "\4b";
+}
+.icon-youtube:before {
+  content: "\4c";
+}
+.icon-girl:before {
+  content: "\4d";
+}
+.icon-reddit:before {
+  content: "\4e";
+}
+.icon-cart-plus:before {
+  content: "\4f";
+}
+.icon-plus-circle:before {
+  content: "\50";
+}
+.icon-email:before {
+  content: "\51";
+}
+.icon-bulb:before {
+  content: "\52";
+}
+.icon-play:before {
+  content: "\53";
+}
+.icon-play-circle:before {
+  content: "\54";
+}
+.icon-linkedin:before {
+  content: "\55";
+}
+.icon-earth:before {
+  content: "\56";
+}

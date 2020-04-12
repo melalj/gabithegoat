@@ -1,0 +1,29 @@
+{% unless hide_h2 %}
+  <h2><a href="{{ collection.url }}">{{ collection.title }}</a></h2>
+{% endunless %}
+  <div align="center">
+    {% for product in collection.products limit: limit %}
+      {% include 'item' with product %}
+    {% endfor %}
+    {% if collection.handle == 't-shirts' %}
+      <div class="item-empty item-fixed-height">
+        <div class="item-empty-content">
+          <p>
+            {{ 'snippets.collection.tshirt.title' | t }}
+            <br>
+            <br> {{ 'snippets.collection.tshirt.follow_us' | t }}
+            <a href="https://instagram.com/gabithegoatofficial" target="_blank">
+              <i class="icon-instagram"></i>
+            </a>
+            <a href="https://facebook.com/GabiTheGoat" target="_blank">
+              <i class="icon-facebook"></i>
+            </a>
+            <a href="https://twitter.com/GabiTheGoat" target="_blank">
+              <i class="icon-twitter"></i>
+            </a>
+            <br>{{ 'snippets.collection.tshirt.org_sign_up_html' | t: newsletter_link: 'http://eepurl.com/dkJ1q9' }}
+          </p>
+        </div>
+      </div>
+    {% endif %}            
+  </div>

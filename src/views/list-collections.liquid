@@ -1,0 +1,17 @@
+<div class="container" data-sticky-trigger="top">
+  <div align="center" class="page-subheader">
+    {{ 'list_collections.title_html' | t }}
+    <p>
+    {{ 'list_collections.description' | t }}
+      <br>
+    
+      <a href="/pages/the-girls">{{ 'list_collections.learn_more_girls' | t }} →</a>
+    </p>
+    <p>{{ 'list_collections.quality' | t }}</p>
+  </div>
+  {% include 'collection' with collections['squeaky-toys'] %}
+  {% include 'collection' with collections['adult-t-shirts'] %}
+  {% include 'collection' with collections['kids-t-shirts'] %}
+
+  {% section 'sections/goodies' %}
+</div>

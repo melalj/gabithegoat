@@ -1,0 +1,27 @@
+<div class="item">
+  <div class="item-top{% if product.type == 'T-Shirt' %} no-overflow{% endif %}">
+  {% if product.type == 'Premium Squeaky Toy' %}
+    <div class="item-toy">
+      <img src="/assets/goat.png" width="163px" height="275px" alt="Squeaky goat" />
+    </div>
+    <div class="item-wall-shadow"></div>
+    <div class="item-toy-shadow"></div>
+    <div class="item-toy-hand-mask">
+      <div class="item-toy-hand">
+        <img src="/assets/hand.svg" width="267px" height="100px" alt="arm squeaky goat" />
+      </div>
+    </div>
+    {% else if %}
+    <div class="item-tshirt">
+      <img src="{{ product.featured_image | img_url: '888x894'}}" width="222px" height="223px" alt="{{product.featured_image.alt}}" />
+    </div>
+    {% endif %}
+  </div>
+  <div class="item-bottom">
+    <div class="item-bottom-info">
+      <div class="item-bottom-info-subtitle">{{ product.type }}</div>
+      <div class="item-bottom-info-title"><a href="{{ product.url }}">{{ product.title | replace: " Adult Unisex T-Shirt", "" | replace: " Kids Unisex T-Shirt", "" }}</a></div>
+      <div class="item-bottom-info-price">{{ product.price | money_without_trailing_zeros }}</div>
+    </div>
+  </div>
+</div>

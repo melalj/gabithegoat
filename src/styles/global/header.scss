@@ -1,0 +1,284 @@
+/* HEADER */
+.header-replacer {
+  display: none;
+  width: 100%;
+  background-color: #4ad5fd;
+}
+
+header {
+  background-color: #4ad5fd;
+  display: block;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), 0% 100%);
+  padding-bottom: 60px;
+}
+
+.template-index header,
+.template-product header,
+.suffix-help-gabi header,
+{
+  padding-bottom: 20px;
+  clip-path: none;
+}
+
+.special-message {
+  display: block;
+  width: 100%;
+  background: rgb(255, 100, 162);
+  border-bottom: 1px solid #c34a7a;
+  cursor: pointer;
+  transition: 500ms background-color ease-in;
+  &:hover {
+    background: rgb(255, 118, 173);
+  }
+  .special-message-content {
+    padding: 6px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+header > nav {
+  padding-top: 20px;
+}
+
+header > nav > .container {
+  padding: 0 15px;
+}
+
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.navbar-header {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.navbar-nav {
+  margin: 0;
+}
+
+.nav > li {
+  position: relative;
+  display: block;
+}
+
+.nav > li > a:not(.btn) {
+  line-height: 75px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: normal;
+  margin: 0 10px;
+  padding: 10px 15px;
+}
+
+.nav > li > a:not(.btn):hover {
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+}
+
+.nav-brand {
+  width: 222px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  padding-right: 10px;
+  border: 0;
+}
+
+.navbar-right {
+  margin-right: -15px;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-cta {
+  float: right;
+  margin: 12px;
+  display: none;
+}
+@media (max-width: 768px) {
+  .template-product .nav-cta {
+    display: block;
+  }
+}
+
+body.fixed-header .header-replacer {
+  display: block;
+}
+
+body.fixed-header header {
+  padding: 0;
+  clip-path: none;
+}
+
+body.fixed-header .special-message {
+  display: none;
+}
+
+body.fixed-header header > nav {
+  padding-top: 0;
+}
+
+body.fixed-header .nav-cta {
+  display: block;
+}
+
+body.fixed-header header {
+  z-index: 999999;
+  position: fixed;
+  width: 100%;
+  height: 66px;
+  top: -76px;
+  transform: translateY(75px);
+  transition: transform 0.3s;
+  background: transparent;
+}
+
+body.fixed-header .nav > li > a:not(.btn) {
+  font-size: 16px;
+  line-height: 65px;
+  margin: 0 10px;
+}
+
+body.fixed-header .nav-brand {
+  width: 156px;
+  padding-top: 21px;
+}
+
+body.fixed-header header > nav > .container {
+  background-color: #47cef4;
+  border: 1px solid #2ba6c8;
+  border-bottom: 2px solid #2ba6c8;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+body.fixed-header-end header {
+  transform: translateY(0px);
+  transition: transform 0.3s;
+}
+
+@media (max-width: 1048px) {
+  .nav-brand {
+    width: 156px;
+    padding-top: 21px;
+  }
+
+  .nav > li > a:not(.btn) {
+    font-size: 16px;
+    line-height: 65px;
+    margin: 0 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding-bottom: 0 !important;
+    nav {
+      padding-top: 0 !important;
+    }
+  }
+
+  .special-message {
+    .special-message-content {
+      font-size: 14px;
+    }
+  }
+
+  .nav-brand {
+    padding-right: 0;
+  }
+
+  body.fixed-header header > nav > .container {
+    margin: 0 5px;
+  }
+
+  .nav-toggle {
+    cursor: pointer;
+    display: block;
+    float: left;
+    color: #fff;
+    font-size: 20px;
+    margin: 23px 15px 23px 5px;
+  }
+
+  .main-left .actions {
+    padding: 10px 0;
+  }
+
+  .navbar-collapse {
+    padding-bottom: 30px;
+  }
+
+  .navbar-collapse.collapse {
+    display: none;
+  }
+
+  .nav > li:first-child {
+    border-top: 1px solid #82e4ff;
+  }
+
+  .nav > li:last-child {
+    border: 0;
+  }
+
+  .nav > li {
+    border-bottom: 1px solid #82e4ff;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-brand {
+    float: left;
+  }
+
+  .navbar-header {
+    float: left;
+  }
+
+  .navbar-nav > li {
+    float: left;
+  }
+
+  .navbar-nav {
+    float: left;
+  }
+
+  .navbar-right {
+    float: right;
+  }
+}
+
+.invisible-top-edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -300px;
+  height: 300px;
+  background: #4ad5fd url("/assets/goat-squeezed.svg") no-repeat top center;
+  transform: rotate(180deg);
+  background-size: 104px 217px;
+  z-index: 90000;
+}
+
+.bullet {
+  display: inline-block;
+  border: 1px solid #fff;
+  padding-right: 2px;
+  padding-left: 2px;
+  padding-top: 2px;
+  border-radius: 100%;
+  margin-left: 4px;
+  width: 20px;
+  height: 21px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+}

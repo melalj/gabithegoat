@@ -1,0 +1,114 @@
+@keyframes impatient {
+  0% {
+    transform: translateX(220px);
+  }
+  25% {
+    transform: translateX(150px);
+  }
+  50% {
+    transform: translateX(160px);
+  }
+  80% {
+    transform: translateX(210px);
+  }
+  100% {
+    transform: translateX(220px);
+  }
+}
+
+@keyframes hop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 10%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes impatient-store {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(-15px);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes impatient-store-hover {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-30px);
+  }
+}
+
+
+@keyframes tshirt-rotate {
+  0% {
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes shadow-move {
+  0% {
+    transform: translateX(8px);
+  }
+
+  50% {
+    transform: translateX(-8px);
+  }
+
+  100% {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes progressBarStripes {
+  from {
+    background-position: 0 100px;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes fadeOutToNone {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+
+  99.9% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}

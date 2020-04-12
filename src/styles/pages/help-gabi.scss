@@ -1,0 +1,259 @@
+.press-top {
+  color: #ffffff;
+  background-color: #4ad5fd;
+  padding-top: 20px;
+  .main-left {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 32px;
+    color: #fff;
+
+    &::after {
+      display: none;
+    }
+  }
+  p {
+    color: #fff;
+    font-size: 18px;
+  }
+}
+
+.press-main {
+  margin: 0 auto;
+  padding-bottom: 50px;
+  display: flex;
+
+  .press-menu {
+    width: 220px;
+    min-width: 220px;
+    ul {
+      margin: 10px;
+      text-align: right;
+      padding-right: 10px;
+      border-right: 1px solid #e9e9e9;
+      list-style: none;
+      width: 150px;
+      li {
+        line-height: 25px;
+        a {
+          font-size: 14px;
+          color: #96A4AC;
+          &.active {
+            color: #4ad5fd;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      
+    }
+  }
+
+  .press-content {
+    flex-basis: auto;
+    flex-grow: 1;
+    padding: 10px;
+    width: calc(100% - 240px);
+  }
+}
+@media (max-width: 768px) {
+  .press-main {
+    .press-content {
+      width: calc(100% - 20px);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .press-main {
+    width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .press-main {
+    width: 1024px;
+  }
+}
+
+@media (min-width: 1224px) {
+  .press-main{
+    width: 1224px;
+  }
+}
+
+.suffix-help-gabi {
+  .collage-section {
+    height: auto;
+    .impact-section {
+      position: relative;
+      top: 0;
+      .collage-section{
+        h2 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .press-menu{
+    display: none;
+  }
+}
+
+
+.btn-share {
+  display: inline-block;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: "Museo", "Helvetica", "san-serif";  
+  padding: 10px 15px;
+  margin: 10px 5px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #96A4AC;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+
+  &.facebook {
+    border-color: #4369B4;
+    color: #4369B4;
+    &:hover {
+      border-color: #527cd1;
+      color: #527cd1;
+    }
+  }
+
+  &.instagram {
+    border-color: #D1116B;
+    color: #D1116B;
+    &:hover {
+      border-color: #e42d82;
+      color: #e42d82;
+    }
+  }
+
+  &.twitter {
+    border-color: #00acee;
+    color: #00acee;
+    &:hover {
+      border-color: #18b3f0;
+      color: #18b3f0;
+    }
+  }
+
+  &.youtube {
+    border-color: #FC0D1B;
+    color: #FC0D1B;
+    &:hover {
+      border-color: #f52f3c;
+      color: #f52f3c;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-share{
+    display: block;
+  }
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.card {
+  flex: 0 0 auto;
+  background: #FFFFFF;
+  border: 10px solid #ffffff;
+  box-shadow: 0 0 21px 0 rgba(0,0,0,0.05), 0 0 0 1px #E9E9E9;
+  margin: 10px;
+  .card-top {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    .card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      .btn-reach-out {
+        display: inline-block;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 14px 0 rgba(0,0,0,0.5);
+        border-radius: 4px;
+        color: #7D8D96;
+        font-size: 14px;
+        padding: 15px;
+        transition: 300ms transform ease-in;
+        transform: scale(1);
+
+        strong {
+          font-size: 16px;
+        }
+      }
+
+      .play {
+        font-size: 60px;
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0 0 14px rgba(0,0,0,0.5);
+        transition: 300ms transform ease-in;
+        transform: scale(1);
+      }
+      &:hover {
+        .play, .btn-reach-out {
+          transform: scale(1.1);
+        }
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .card-bottom {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    .card-info {
+      flex-grow: 1;
+      padding: 10px;
+      color: #7D8D96;
+      strong {
+        font-size: 14px;
+      }
+      p {
+        margin: 0;
+        font-size: 14px;
+      }
+    }
+    .card-action {
+      text-align: right;
+      padding: 5px;
+      .btn {
+        font-size: 14px;
+        margin: 0;
+      }
+    }
+  }
+}

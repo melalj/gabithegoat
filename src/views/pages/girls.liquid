@@ -1,0 +1,34 @@
+{% layout "layout" %}
+<div class="container container-md" data-sticky-trigger="top">
+  <div align="center" class="page-subheader">
+    <h1 class="with-preheader">{{ 'girls.title' | t }}</h1>
+  </div>
+
+  <h2>{{ 'girls.education_problem.title' | t }}</h2>
+  <div class="side-by-side align-top responsive responsive-scale-img">
+    <div class="left-side">
+      {{ 'girls.education_problem.text_1_html' | t }}
+      {{ 'girls.education_problem.text_2_html' | t }}
+      {{ 'girls.education_problem.text_3_html' | t }}
+    </div>
+    <div class="right-side">
+      <img async src="{{ 'girls-1-c.png' | asset_url }}" width="362px" height="357px" alt="{{ 'girls.education_problem.image_caption' | t }}"/>
+    </div>
+  </div>
+
+  <h2>{{ 'girls.empowerement.title' | t }}</h2>
+  <div class="side-by-side align-top responsive responsive-scale-img">
+    <div class="left-side">
+      <img async src="{{ 'girls-2-c.png' | asset_url }}" width="322px" height="582px" alt="{{ 'girls.empowerement.image_caption' | t }}"/>
+    </div>
+    <div class="right-side">
+      {{ 'girls.empowerement.text_1_html' | t }}
+      {{ 'girls.empowerement.text_2_html' | t }}
+      {{ 'girls.empowerement.text_3_html' | t }}
+      <p>
+        <a href="/products/gabi-the-goat-squeaky-toy" class="btn btn-sm">{{ 'girls.empowerement.support_girls' | t }}</a><br>
+        <a href="https://www.efamorocco.org/" target="_blank">{{ 'girls.empowerement.more_efa' | t }} →</a>
+      </p>
+    </div>
+  </div>
+</div>

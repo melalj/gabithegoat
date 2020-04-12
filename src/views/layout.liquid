@@ -1,0 +1,36 @@
+<!doctype html>
+<!--[if IE 9]> <html class="ie9" lang="{{ shop.locale }}"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="template-{{ template.name }} suffix-{{ template.suffix }}" lang="{{ shop.locale }}"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  {% capture seo_description %}{{ 'seo.description_default' | t }}{% endcapture %}
+  {%- if template.name == 'product' and product.type == 'Premium Squeaky Toy'-%}
+    {% capture seo_title %}{{ 'seo.title_gabi' | t }}{% endcapture %}
+    {% capture seo_description %}{{ 'seo.description_gabi' | t }}{% endcapture %}
+  {% elsif template.name == 'list-collections' %}
+    {% capture seo_title %}{{ 'seo.title_collections' | t }}{% endcapture %}
+  {% elsif template.name == 'index' %}
+    {% capture seo_title %}{{ 'seo.title_homepage' | t }}{% endcapture %}
+  {% else %}
+    {% capture seo_title %}{{ page_title }} {{ 'seo.title_suffix' | t }}{% endcapture %}
+  {% endif %}
+  <title>{{ seo_title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="{{ seo_description }}" />
+  <meta name="apple-mobile-web-app-title" content="YouGoatMe" />
+  {% include 'snippets/social-meta-tags' %}
+  {% include 'snippets/icons' %}
+  <link href="/main.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+<body>
+
+  {% include 'sections/header' %}
+
+  {% block %}{% endblock %}
+
+  {% include 'sections/footer' %}
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="/theme.js" defer="defer" type="text/javascript"></script><!--<![endif]-->
+  <!--[if lt IE 9]><script src="/theme.js" type="text/javascript"></script><![endif]-->
+</body>
+</html>

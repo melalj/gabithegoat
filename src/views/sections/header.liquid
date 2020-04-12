@@ -1,0 +1,47 @@
+<div id="progress">
+  <div class="progress-bar" role="progressbar"></div>
+</div>
+<div class="invisible-top-edge"></div>
+<!-- BEGIN HEADER -->
+<div class="header-replacer"></div>
+<header class="noselect">
+  <nav>
+    <div class="container">
+      <div class="navbar-header">
+        <i class="icon-menu nav-toggle"></i>
+        <a href="/">
+          <img class="nav-brand" src="/assets/logo.svg" alt="YouGoatMe" />
+        </a>
+        {% if template.name == 'product' %}
+          <a href="#" class="btn btn-sm nav-cta cta-cart">+<i class="icon icon-cart"></i></a>
+        {% else %}
+          <a href="/products/gabi-the-goat-squeaky-toy" class="btn btn-sm nav-cta cta-shop">{{ 'sections.header.shop_now' | t }}</a>
+        {% endif %}
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+
+          <li class="hide-md">
+            <a href="/products/gabi-the-goat-squeaky-toy">The Toy</a>
+          </li>
+          <li>
+            <a href="https://teespring.com/stores/gabi-the-goat" target="_blank">Goodies & T-Shirts</a>
+          </li>
+
+          <li>
+            <a href="/pages/story">{{ 'sections.header.links.story' | t }}</a>
+          </li>
+
+          <li>
+            <a href="/pages/the-girls">{{ 'sections.header.links.girls' | t }}</a>
+          </li>
+
+          <li>
+            <a href="/pages/donate">{{ 'sections.header.links.donate' | t }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- END HEADER -->

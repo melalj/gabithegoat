@@ -1,0 +1,77 @@
+{% layout "layout" %}
+
+<!-- BEGIN HERO -->
+  <section class="hero">
+    <div class="hero-center container">
+      <div class="main-right noselect">
+        <img async src="/assets/main-c.png" width="375px" height="365px" alt="{{ 'homepage.hero_image_caption' | t }}" />
+      </div>
+      <div class="main-left">
+        <h1>{{ 'homepage.tagline_title_html' | t }}</h1>
+        <p>
+          {{ 'homepage.tagline_subtext' | t }}
+        </p>
+        <div class="actions">
+          <a href="/products/gabi-the-goat-squeaky-toy" class="btn" data-sticky-trigger="bottom">{{ 'homepage.shop_now' | t }}</a>
+          <a href="/pages/story" class="btn btn-white">{{ 'homepage.find_out_more' | t }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="hero-bottom">
+    <i class="icon-caret-small-down hero-scroll"></i>
+  </div>
+  <!-- BEGIN HERO -->
+
+  <!-- BEGIN STORY -->
+  <section class="story">
+    <article>
+      <div class="text">
+        <div>{{ 'homepage.story.first_html' | t }}</div>
+      </div>
+      <div class="image">
+        <img async src="/assets/home-1-c.png" width="462px" height="367px" alt="{{ 'homepage.story.first_image_caption' | t }}" />
+      </div>
+    </article>
+    <article>
+      <div class="text">
+        <div>{{ 'homepage.story.second_html' | t }}</div>
+      </div>
+      <div class="image">
+        <img async src="/assets/home-2-c.png" width="362px" height="311px" alt="{{ 'homepage.story.second_image_caption' | t }}" />
+      </div>
+    </article>
+    <article>
+      <div class="text">
+        <div>{{ 'homepage.story.third_html' | t }}</div>
+      </div>
+      <div class="image">
+        <img async src="/assets/home-3-c.png" width="451px" height="313px" alt="{{ 'homepage.story.third_image_caption' | t }}" />
+      </div>
+    </article>
+  </section>
+  <!-- END STORY -->
+
+  <!-- BEGIN FULL GOAT TOY -->
+  <div class="fulltoy-section noselect">
+    <div class="bubble" data-callback="{{ 'homepage.animation.callback_html' | t }}" data-keep="{{ 'homepage.animation.keep_html' | t }}">{{ 'homepage.animation.press_html' | t }}</div>
+    <div class="shadow"></div>
+    <div class="thumb"></div>
+    <div class="goat"></div>
+    <div id="goat-action"></div>
+    <div class="arm"></div>
+  </div>
+  <!-- END FULL GOAT TOY -->
+
+  <!-- BEGIN IMPACT -->
+  <div class="collage-section">
+    <div class="impact-section">
+      <div class="impact-section-container">
+        <h2>{{ 'homepage.impact.title' | t }}</h2>
+        <p>{{ 'homepage.impact.subtext' | t }}</p>
+        <a href="/products/gabi-the-goat-squeaky-toy" class="btn">{{ 'homepage.impact.cta' | t }}</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- END IMPACT -->

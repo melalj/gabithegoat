@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square150x150logo src="https://cdn.shopify.com/s/files/1/3099/1240/t/2/assets/mstile-150x150.png"/>
+            <TileColor>#2d89ef</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>

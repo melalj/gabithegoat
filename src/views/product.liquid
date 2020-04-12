@@ -1,0 +1,190 @@
+{% layout "layout" %}
+<div class="product-page-container" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true" itemscope itemtype="http://schema.org/Product">
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+  <meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
+  <meta itemprop="url" content="{{ shop.url }}{{ current_variant.url }}">
+  <meta itemprop="brand" content="{{ product.vendor }}">
+  <meta itemprop="image" content="{{ featured_image.src }}">
+  <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+  <div class="container">
+    <div class="product-page">
+      <div class="product-left" data-zoom-scale="2" >
+        {% if featured_image != blank %}
+          <img src="{{ featured_image.src }}" class="product-image-featured" alt="{{ featured_image.alt | escape }}" id="product-img" data-product-featured-image />
+          {% if product.type == 'Premium Squeaky Toy' %}
+            <div class="product-image-list">
+              {% for image in product.images %}
+                <img src="{{ image.src }}" alt="{{ image.alt | escape }}" data-img="{{ image.src }}" {% if forloop.first %}class="active"{% endif %} />
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endif %}
+
+      </div>
+      <div class="product-right">
+        <div class="product-info" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+          <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+          <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+          <link itemprop="availability" href="http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}">
+          <em>{{ product.type }}</em>
+          <h1 class="with-preheader">{{ product.title }}</h1>
+          <div>
+            <div class="product-price" id="price">
+              {{ current_variant.price | money_without_trailing_zeros }}
+            </div>
+
+            {% if product.compare_at_price_max > product.price %}
+              <span class="visually-hidden">{{ 'product.regular_price' | t }}</span>
+              <s>
+                {% if current_variant.compare_at_price > current_variant.price %}
+                  {{ current_variant.compare_at_price | money_without_trailing_zeros }}
+                {% endif %}
+              </s>
+            {% endif %}
+          </div>
+          <form action="/checkout" method="GET">
+            <div class="product-options">
+              <div class="product-option">
+                <label>
+                  {{ 'product.quantity' | t }}
+                  <input type="number" name="qty" value="1"/>
+                </label>
+              </div>
+              {% if product.variants.size > 1 %}
+                {% if product.options[0] %}
+                  {% assign used = '' %}
+                  <div class="product-option">
+                    <label for="select-one">{{ product.options[0] }}
+                    <select id='select-one' onchange="updateVariant()">
+                      {% for variant in product.variants %}
+                        {% unless used contains variant.option1 %}
+                          <option value="{{ variant.option1 }}">{{ variant.option1 }}</option>
+                          {% capture used %}{{ used }} {{ variant.option1 }}{% endcapture %}
+                        {% endunless %}
+                      {% endfor %}
+                    </select></label>
+                  </div>
+                {% endif %}
+                {% if product.options[1] %}
+                  {% assign used = '' %}
+                  <div class="product-option">
+                    <label for="select-one">{{ product.options[1] }}
+                    <select id='select-two' onchange="updateVariant()">
+                      {% for variant in product.variants %}
+                        {% unless used contains variant.option2 %}
+                          <option value="{{ variant.option2 }}">{{ variant.option2 }}</option>
+                          {% capture used %}{{ used }} {{ variant.option2 }}{% endcapture %}
+                        {% endunless %}
+                      {% endfor %}
+                    </select></label>
+                  </div>
+                {% endif %}
+                {% if product.options[2] %}
+                  {% assign used = '' %}
+                  <div class="product-option">
+                    <label for="select-one">{{ product.options[2] }}
+                    <select id='select-three' onchange="updateVariant()">
+                      {% for variant in product.variants %}
+                        {% unless used contains variant.option3 %}
+                          <option value="{{ variant.option3 }}">{{ variant.option3 }}</option>
+                          {% capture used %}{{ used }} {{ variant.option3 }}{% endcapture %}
+                        {% endunless %}
+                      {% endfor %}
+                    </select></label>
+                  </div>
+                {% endif %}
+              {% endif %}
+            </div>
+            <div class="product-cta">
+              <button
+                type="submit"
+                class="btn"
+                data-sticky-trigger="bottom">
+                {% if current_variant.available %}
+                  {{ 'product.add_to_cart' | t }}
+                {% else %}
+                  {{ 'product.pre-order' | t }}
+                {% endif %}
+              </button>
+              {% if product.type == 'Premium Squeaky Toy' %}
+              <div class="sub">
+                <div class="orange-dot"></div> {{ 'product.pre-order' | t }}
+              </div>
+              {% else %}
+              <div class="sub">{{ 'product.ships_in_html' | t: time_shipping: '3-5 days' }}</div>
+              {% endif %}
+            </div>
+          </form>
+          <div>
+            {{ product.description }}
+            {% if product.type != 'Premium Squeaky Toy' %}
+            <p>{{ 'product.ask_colors' | t }} <a href="/pages/contact-us">{{ 'product.contact_us' | t }} →</a></p>
+            <strong>{{ 'product.social_product_description.title' | t }}</strong>
+            {{ 'product.social_product_description.text_html' | t }}
+            {% endif %}
+            <p>{{ 'product.donate_directly_html' | t }}</p>
+          </div>
+        </div>
+        <div class="product-share">
+          <div class="product-share-background"></div>
+          <div class="product-share-content">
+            <p>{{ 'product.share' | t }}</p>
+            {% include 'snippets/social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section>
+  <div class="container">
+  <div align="center">
+    <img src="{{ 'goodies.png' | asset_url }}" height="170px" alt="Goat T-shirts"/>
+    <br />
+    <a href="https://teespring.com/stores/gabi-the-goat" class="btn btn-sm" target="_blank"><i class="icon icon-tshirt"></i> Purchase Goat T-Shirts & Goodies </a>
+    </div>
+
+    <h2>{{ 'product.social_section.title' | t }}</h2>
+    <div class="side-by-side align-top responsive responsive-scale-img">
+      <div class="left-side">
+        <img async class="img-impact" src="{{ 'impact-c.png' | asset_url }}" width="312px" height="275px" alt="{{ 'product.social_section.image_caption' | t }}"/>
+      </div>
+      <div class="right-side">
+        {{ 'product.social_section.text_html' | t }}
+        <p><a href="/pages/the-girls">{{ 'product.social_section.cta' | t }} →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+{% unless product == empty %}
+
+<script>
+	function updateVariant() {
+		{% if product.options[0] %}var opt1 = document.getElementById('select-one').value;{% endif %}
+		{% if product.options[1] %}var opt2 = document.getElementById('select-two').value;{% endif %}
+		{% if product.options[2] %}var opt3 = document.getElementById('select-three').value;{% endif %}
+		var id = '';
+		{% for v in product.variants %}
+		if(opt1=="{{ v.option1 }}"{% if product.options[1] %} && opt2=="{{ v.option2 }}"{% endif %}{% if product.options[2] %} && opt3=="{{ v.option3 }}"{% endif %}) {
+				var id = {{ v.id }};
+				var price = "{{ v.price | money_without_trailing_zeros }}";
+				var img = "{{ v.image.src }}";
+			}
+		{% endfor %}
+		if(id != '') {
+			document.getElementById('product-select').value = id;
+			document.getElementById('price').innerHTML = price;
+		} else {
+			document.getElementById('product-select').value = '';
+			document.getElementById('price').innerHTML = 'Unavailable';
+		}
+    document.getElementById('progress').removeAttribute('class');
+    document.getElementById('product-img').src = img;
+    document.getElementById('product-img').onload = function () {
+      document.getElementById('progress').setAttribute('class', 'stop');
+    };		
+	}
+</script>
+
+{% endunless %}

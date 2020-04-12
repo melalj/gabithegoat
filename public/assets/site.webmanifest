@@ -1,0 +1,19 @@
+{
+    "name": "YouGoatMe",
+    "short_name": "YouGoatMe",
+    "icons": [
+        {
+            "src": "https://cdn.shopify.com/s/files/1/3099/1240/t/2/assets/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://cdn.shopify.com/s/files/1/3099/1240/t/2/assets/android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#4ad5fd",
+    "background_color": "#4ad5fd",
+    "display": "standalone"
+}
