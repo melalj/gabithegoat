@@ -73,7 +73,7 @@ router.post('/pages/contact', async (req, res) => {
     text: `From: ${name} <${email}>\n\n${message}`,
   };
   const sg = await sgMail.send(msg);
-  res.send({ success: true });
+  res.send({ success: true, response: sg.data });
 });
 
 
