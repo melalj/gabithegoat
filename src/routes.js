@@ -1,14 +1,7 @@
-/**
- * routes.js
- * Stripe Payments Demo. Created by Romain Huet (@romainhuet)
- * and Thorsten Schaeff (@thorwebdev).
- *
- * This file defines all the endpoints for this demo app. The two most interesting
- * endpoints for a Stripe integration are marked as such at the beginning of the file.
- * It's all you need in your app to accept all payments in your app.
- */
-
 'use strict';
+
+const sgMail = require('@sendgrid/mail');
+const axios = require('axios');
 
 const config = require('./config');
 const {products} = require('./helpers/inventory');
@@ -41,8 +34,49 @@ router.get('/pages/story', (req, res) => {
 });
 
 router.get('/pages/contact', (req, res) => {
-  res.render("pages/contact", { shop, template: { name: 'page', suffix: 'contact' }});
+  const recaptchaKey = process.env.RECAPTCHA_KEY;
+  res.render("pages/contact", {
+    shop,
+    recaptchaKey, 
+    emplate: { name: 'page', suffix: 'contact' },
+    page: { title: 'Contact'},
+  });
 });
+
+async function verifyRecaptcha(response, remoteip) {
+  let query = '?';
+  query += `secret=${encodeURIComponent(process.env.RECAPTCHA_SECRET)}`;
+  query += `&response=${encodeURIComponent(response)}`;
+  if (process.env.NODE_ENV === 'production') query += `&remoteip=${encodeURIComponent(remoteip)}`;
+  return axios.post(`https://www.google.com/recaptcha/api/siteverify${query}`);
+}
+
+router.post('/pages/contact', async (req, res) => {
+  const { recaptchaResponse, subject, email, name, message } = req.body;
+  const ip = req.ipAddress;
+  const recaptchaValidity = await verifyRecaptcha(recaptchaResponse, ip);
+  
+  if (!email || !subject || !recaptchaResponse || !message) {
+    return res.send({ success: false, error: 'Missing data' });
+  }
+  
+  if (!recaptchaValidity.data.success) {
+    return res.send({ success: false, error: 'Captcha validation failed' });
+  }
+
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  const msg = {
+    to: process.env.SENDGRID_TO,
+    from: process.env.SENDGRID_FROM,
+    replyTo: email,
+    subject: `[Gabi the Goat] ${subject}`,
+    text: `From: ${name} <${email}>\n\n${message}`,
+  };
+  const sg = await sgMail.send(msg);
+  res.send({ success: true });
+});
+
+
 
 router.get('/pages/help-gabi', (req, res) => {
   res.render("pages/help-gabi", { shop, template: { name: 'page', suffix: 'help-gabi' }});

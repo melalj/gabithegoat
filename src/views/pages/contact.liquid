@@ -4,66 +4,68 @@
     <h1 class="with-preheader">{{ page.title }}</h1>
     <p>{{ page.content }}</p>
   </div>
-  {% form 'contact' %}
-
-    {% if form.posted_successfully? %}
-      <p class="form-success">
-        {{ 'contact.form.post_success' | t }}
-      </p>
-    {% endif %}
-
-    {{ form.errors | default_errors }}
+  <form id="form">
     <div class="side-by-side responsive">
       <div class="half">
-        <label for="ContactFormSubject">{{ 'contact.form.subject' | t }}
+        <label for="subject">{{ 'contact.form.subject' | t }}
         <input type="text"
-          name="contact[subject]"
-          id="ContactFormSubject"
+          id="subject"
+          required
           value=""></label>
 
-        <label for="ContactFormName">{{ 'contact.form.name' | t }}
+        <label for="name">{{ 'contact.form.name' | t }}
         <input type="text"
-          name="contact[name]"
-          id="ContactFormName"
-          value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}"></label>
+          required
+          id="name"></label>
 
-        <label for="ContactFormEmail">{{ 'contact.form.email' | t }}
+        <label for="email">{{ 'contact.form.email' | t }}
         <input type="email"
-          name="contact[email]"
-          id="ContactFormEmail"
-          value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+          id="email"
+          required
           spellcheck="false"
           autocomplete="off"
           autocapitalize="off"></label>
       </div>
       <div class="half">
-        <label for="ContactFormMessage">{{ 'contact.form.message' | t }}
+        <label for="message">{{ 'contact.form.message' | t }}
         <textarea rows="11"
-          name="contact[body]"
-          id="ContactFormMessage">
-          {% if form.body %}
-            {{ form.body }}
-          {% endif %}
+          id="message">
         </textarea></label>
       </div>
     </div>
     <div align="right">
-      <div class="captcha">
-        How much is: <input type="text" readonly="readonly" id="question" style="width: 100px"/>
-        Answer:* <input type="text" id="answer" style="width: 100px"/>
-	    </div>
+      <div class="g-recaptcha" data-sitekey="{{recaptchaKey}}"></div>
       <button class="btn" type="submit">{{ 'contact.form.send' | t }}</button>
     </div>
-  {% endform %}
-  <script>
-  var n1 = Math.round(Math.random() * 10 + 1);
-  var n2 = Math.round(Math.random() * 10 + 1);
-  document.querySelector('#question').value = n1 + " + " + n2;
-  document.querySelector(".contact-form").addEventListener('submit', function (e) {
-    if ((n1 + n2) !== Number(document.querySelector("#answer").value)) {
-      document.querySelector('#answer').style.boxShadow = '0px 0px 7px red';
-      e.preventDefault(); 
-    } 
-    });
-</script>
+  </form>
 </div>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+    document.querySelector('#form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      var xmlhttp = new XMLHttpRequest();
+      var theUrl = "/pages/contact";
+      xmlhttp.open("POST", theUrl);
+      xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      xmlhttp.send(JSON.stringify({
+        "name": document.getElementById('name').value,
+        "subject": document.getElementById('subject').value,
+        "email": document.getElementById('email').value,
+        "message": document.getElementById('message').value,
+        "recaptchaResponse": document.getElementById('g-recaptcha-response').value,
+      }));
+      xmlhttp.onload = function () {
+        if(xmlhttp.readyState === 4) {
+          const status = xmlhttp.status;
+          if (status === 0 || (status >= 200 && status < 400)) {
+            const res = JSON.parse(xmlhttp.responseText);
+            if (res.error) return alert(res.error);
+            alert('Message sent successfully');
+            document.location.href = '/';
+          }
+        }
+      }
+    });
+    
+    </script>
