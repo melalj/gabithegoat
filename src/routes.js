@@ -1,13 +1,10 @@
-const config = require('./config');
-const {products} = require('./helpers/inventory');
+// const config = require('./config');
+// const {products} = require('./helpers/inventory');
 const express = require('express');
 const router = express.Router();
-const stripe = require('stripe')(config.stripe.secretKey);
+// const stripe = require('stripe')(config.stripe.secretKey);
 
 const product = require('./data/product.json');
-
-stripe.setApiVersion(config.stripe.apiVersion);
-
 
 const shop = { local: 'en' };
 
@@ -31,7 +28,7 @@ router.get('/pages/story', (req, res) => {
 router.get('/pages/contact', (req, res) => {
   res.render("pages/contact", {
     shop,
-    emplate: { name: 'page', suffix: 'contact' },
+    template: { name: 'page', suffix: 'contact' },
     page: { title: 'Contact'},
   });
 });
@@ -58,10 +55,12 @@ router.get('/products/:sku', (req, res) => {
   res.redirect(301, '/products/gabi-the-goat-squeaky-toy');
 });
 
+/*
 router.get('/checkout', (req, res) => {
   res.render("checkout", { shop, template: { name: 'checkout' }});
 });
 
+/*
 
 /**
  * Stripe integration to accept all types of payments with 3 POST endpoints.
@@ -73,6 +72,7 @@ router.get('/checkout', (req, res) => {
  * It confirms the PaymentIntent as soon as a non-card payment source becomes chargeable.
  */
 
+/*
 // Calculate total payment amount based on items in basket.
 const calculatePaymentAmount = async items => {
   const productList = await products.list();
@@ -214,9 +214,6 @@ router.post('/api/webhook', async (req, res) => {
   res.sendStatus(200);
 });
 
-/**
- * Routes exposing the config as well as the ability to retrieve products.
- */
 
 // Expose the Stripe publishable key and other pieces of config via an endpoint.
 router.get('/api/config', (req, res) => {
@@ -245,6 +242,8 @@ router.get('/api/payment_intents/:id/status', async (req, res) => {
   const paymentIntent = await stripe.paymentIntents.retrieve(req.params.id);
   res.json({paymentIntent: {status: paymentIntent.status}});
 });
+
+*/
 
 router.use((req, res, next) => {
   const err = new Error('Not Found');
