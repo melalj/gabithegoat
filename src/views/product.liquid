@@ -97,6 +97,7 @@
               {% endif %}
             </div>
             <div class="product-cta">
+            <!--
               <button
                 type="submit"
                 class="btn"
@@ -106,6 +107,13 @@
                 {% else %}
                   {{ 'product.pre-order' | t }}
                 {% endif %}
+              </button>
+              -->
+              <a
+                href="/pages/contact"
+                class="btn"
+                data-sticky-trigger="bottom">
+                Request access
               </button>
               {% if product.type == 'Premium Squeaky Toy' %}
               <div class="sub">
